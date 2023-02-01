@@ -1,5 +1,4 @@
-import java.util.*;
-public class Stack {
+class Stack {
     int stackSize;
     int []values;
     int top;
@@ -11,9 +10,9 @@ public class Stack {
         top = -1;
     }
     //isFull() function
-    private Boolean isFull(int []values,int stackSize, int top){
+    private Boolean isFull(){
         if((values.length - 1) == -1 ){
-            return isEmpty(values, stackSize, top);
+            return isEmpty();
         }else{
             if((values.length - 1) == top ){
                 return true;
@@ -24,7 +23,7 @@ public class Stack {
     }
     
     //isEmpty() function
-    public Boolean isEmpty(int []values, int stackSize, int top){
+    public Boolean isEmpty(){
         if((values.length - 1) == -1 ){
             return true;
         }else{
@@ -33,8 +32,8 @@ public class Stack {
     }
 
     //creation of the push() method
-    public void push(int x, int []values,int top){
-        if (isFull(values, stackSize, top)){
+    public void push(int x){
+        if (isFull()){
             System.out.println("Error:The stack is full");
         }else{
             values[++top] = x;
@@ -42,17 +41,18 @@ public class Stack {
     }
 
      //creation of the pop() method
-     public void pop(int x, int []values,int top){
-        if (isEmpty(values, stackSize, top)){
+     public int pop(){
+        if (isEmpty()){
             System.out.println("Error:The stack is empty");
+            return -1;
         }else{
-            values[top] = (Integer) null;
+            return values[top--];
         }
     }
 
     //creation of the peek/top() method
-    public int peek(int x, int []values,int top){
-        if (isEmpty(values, stackSize, top)){
+    public int peek(){
+        if (isEmpty()){
             System.out.println("Error:The stack is empty");
             return -1;
         }else{
@@ -60,9 +60,29 @@ public class Stack {
         }
     }
 
+
     //creation of popAll() methods....i.e., method to delete all elements from the stack
-    public void popAll(int []values,int top){
+    public void popAll(){
         values = new int[0];
         top = -1;
     } 
+
+
+    public static void main(String[] args) {
+        Stack myStack = new Stack();
+
+        myStack.stack(5);
+        myStack.push(2);
+        myStack.push(3);
+        myStack.push(4);
+        myStack.push(5);
+        myStack.push(7);
+        myStack.pop();
+        myStack.pop();
+
+        System.out.println("Top element of stack is: " + myStack.peek());
+
+     }
 }
+
+
