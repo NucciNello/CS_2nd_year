@@ -11,7 +11,7 @@ public class Stack {
         top = -1;
     }
     //isFull() function
-    public Boolean isFull(int []values,int stackSize, int top){
+    private Boolean isFull(int []values,int stackSize, int top){
         if((values.length - 1) == -1 ){
             return isEmpty(values, stackSize, top);
         }else{
@@ -34,7 +34,7 @@ public class Stack {
 
     //creation of the push() method
     public void push(int x, int []values,int top){
-        if (isFull()){
+        if (isFull(values, stackSize, top)){
             System.out.println("Error:The stack is full");
         }else{
             values[++top] = x;
@@ -43,7 +43,7 @@ public class Stack {
 
      //creation of the pop() method
      public void pop(int x, int []values,int top){
-        if (isEmpty()){
+        if (isEmpty(values, stackSize, top)){
             System.out.println("Error:The stack is empty");
         }else{
             values[top--];
@@ -52,7 +52,7 @@ public class Stack {
 
     //creation of the peek/top() method
     public int peek(int x, int []values,int top){
-        if (isEmpty()){
+        if (isEmpty(values, stackSize, top)){
             System.out.println("Error:The stack is empty");
             return -1;
         }else{
