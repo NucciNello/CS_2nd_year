@@ -46,7 +46,7 @@ public class Stack {
         if (isEmpty(values, stackSize, top)){
             System.out.println("Error:The stack is empty");
         }else{
-            values[top--];
+            values[top] = (Integer) null;
         }
     }
 
