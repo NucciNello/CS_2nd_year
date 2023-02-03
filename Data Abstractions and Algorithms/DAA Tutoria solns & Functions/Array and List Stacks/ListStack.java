@@ -10,7 +10,7 @@ class ListStack {
     }
     //Constructor of the linked 2nd Node
     public ListStack(int y){
-        value = y;
+        value = y;`     
         next = null;
     }
 
