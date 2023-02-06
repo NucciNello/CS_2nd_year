@@ -124,7 +124,7 @@ public class ArrQueue{
         }
         
         myqueue.displayQueue();
-        System.out.println(values[myqueue.rear]);
+        System.out.println(myqueue.rear);
 
         // System.out.println("");
         // System.out.println("Now, after dequeue:");
