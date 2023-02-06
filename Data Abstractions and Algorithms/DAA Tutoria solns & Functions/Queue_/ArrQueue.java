@@ -60,18 +60,15 @@ public class ArrQueue{
 
     //dequeue function
     //i.e., remove at the front
-    public void dequeue(){
+    public int dequeue(){
         if(isEmpty()){
             System.out.println("Error: the queue is empty");
-            // return 0;
+            return 0;
         }else{
-            // int x = values[front];
-
-            //move the front index
-            // front = (front + 1) % maxSize;
-            // front--;
+            int x = values[maxSize -1];
             counter--;
-            // return x;
+            front = counter;
+            return x;
         }
     }
 
@@ -84,9 +81,12 @@ public class ArrQueue{
         counter = 0;
     }
 
+    //Required to fix printing methodology i.e., doesn't print the last element after dequeue
+    //or after decrementing the counter
     //displaying all elements
     public void displayQueue(){
         int i;
+        int temp = front;
             for(i=0; i<(counter) ; i++){
                 if(i==0){
                     System.out.print("front-->");
@@ -95,11 +95,11 @@ public class ArrQueue{
                     System.out.println(values[front]+"<--rear"); 
                 }
                 else{
-                // System.out.println(values[(front + 1) % maxSize]);
                 System.out.println(values[front]);
                 front--;
                 }
             }
+            front = temp;
     }
 
 
@@ -124,22 +124,20 @@ public class ArrQueue{
         }
         
         myqueue.displayQueue();
-        System.out.println(myqueue.rear);
+        System.out.println("rear index = "+myqueue.rear);
+        System.out.println("front index = "+myqueue.front);
+        System.out.println("Counter = "+myqueue.counter);
 
-        // System.out.println("");
-        // System.out.println("Now, after dequeue:");
-        // myqueue.dequeue();
-        // System.out.println("counter = "+myqueue.counter);
-        // myqueue.displayQueue();
-
-        // System.out.println("front = "+myqueue.front);
-        
-        // int value = myqueue.dequeue();
-        // System.out.println("Retrieved element is "+value);
-        // myqueue.displayQueue();
-
-        // myqueue.enqueue(7);
-        // myqueue.displayQueue();
+        System.out.println("");
+        System.out.println("Now, after dequeue:");
+        myqueue.dequeue();
+        System.out.println("Counter = "+myqueue.counter);
+        int value =  myqueue.dequeue();
+        System.out.println("Retrieved element is "+value);
+        System.out.println("New front index = "+myqueue.front);
+        System.out.println("Counter = "+myqueue.counter);
+        myqueue.displayQueue();
+        System.out.println("rear element = "+values[myqueue.rear]);
     }
 
 }
