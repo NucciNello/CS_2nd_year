@@ -49,6 +49,9 @@ public class ArrQueue{
             //update the rear element index so that it matches to the index of
             //the last element enqueued!!!
             rear = temporary;
+            if(temporary == -1){
+            rear = 0;
+            }
 
             //update the counter too
             counter++;
