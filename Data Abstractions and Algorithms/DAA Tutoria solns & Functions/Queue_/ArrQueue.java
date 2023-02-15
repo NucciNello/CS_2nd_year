@@ -39,21 +39,24 @@ public class ArrQueue{
         if (isFull()){
             System.out.println("Error: the queue is full!");
         }else{
-            //calculate the new rear position for circular
-            // temporary = (temporary + 1) % maxSize;
-            values[temporary] = x;
-            // int temporary = front;
-            //decrement temporary so that the next element comes to front-1 index;
-            temporary--;
+            // //calculate the new rear position for circular
+            // // temporary = (temporary + 1) % maxSize;
+            // values[temporary] = x;
+            // // int temporary = front;
+            // //decrement temporary so that the next element comes to front-1 index;
+            // temporary--;
 
-            //update the rear element index so that it matches to the index of
-            //the last element enqueued!!!
-            rear = temporary;
-            if(temporary == -1){
-            rear = 0;
-            }
+            // //update the rear element index so that it matches to the index of
+            // //the last element enqueued!!!
+            // rear = temporary;
+            // if(temporary == -1){
+            // rear = 0;
+            // }
 
-            //update the counter too
+            // //update the counter too
+            // counter++;
+            rear = (rear +1)%maxSize;
+            values[rear] = x;
             counter++;
         }
     }
@@ -140,4 +143,16 @@ public class ArrQueue{
         System.out.println("rear element = "+values[myqueue.rear]);
     }
 
+}
+public static void(Strings[] args){
+    Queue queue = new Queue(5);
+    for(int i=0; i<5; i++)
+        queue.enqueue(i);
+    System.out.println("Now attempting to enqueue again");
+    queue.enqueue(5);
+    int value = queue.dequeue();
+    System.out.println("the retrieve element ="+ value);
+    queue.enqueue(6);
+    for(i=0;i<5;i++)
+        System.out.println("Item "+i+"="+queue.dequeue());
 }
