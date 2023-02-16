@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.widget.EditText;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    EditText name, reg;
+    EditText name, reg, phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +18,21 @@ public class MainActivity2 extends AppCompatActivity {
 
         name = findViewById(R.id.nameRec);
         reg  = findViewById(R.id.redRec);
+        phone = findViewById(R.id.phone_nu);
 
-        Intent j = getIntent();
-        String getName = j.getStringExtra("NAME");
-        String getReg  = j.getStringExtra("REG_NO");
+//        Intent j = getIntent();
+//        String getName = j.getStringExtra("NAME");
+//        String getReg  = j.getStringExtra("REG_NO");
 
-        name.setText(getName);
-        reg.setText(getReg);
+        Bundle data = getIntent().getExtras();
+        String colName = data.getString("NAME");
+        String colReg = data.getString("REG_NO");
+        String colPhone = data.getString("PHONE");
+
+
+        name.setText(colName);
+        reg.setText(colReg);
+        phone.setText(colPhone);
 
     }
 }

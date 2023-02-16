@@ -6,11 +6,26 @@
     android:layout_height="match_parent">
 
     <EditText
+        android:id="@+id/phone_nu"
+        android:layout_width="249dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="252dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Phone number"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/redRec" />
+
+    <EditText
         android:id="@+id/nameRec"
         android:layout_width="247dp"
         android:layout_height="0dp"
-        android:layout_marginTop="228dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginBottom="75dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
@@ -25,13 +40,13 @@
         android:id="@+id/redRec"
         android:layout_width="249dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="295dp"
+        android:layout_marginBottom="84dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="Registration no"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/phone_nu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameRec" />
