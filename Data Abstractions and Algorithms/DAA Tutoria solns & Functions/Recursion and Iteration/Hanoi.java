@@ -1,13 +1,14 @@
 import java.util.Scanner;
 public class Hanoi {
-    static void hanoi(int n, char from_rod, char to_rod, char temp_rod){
+
+    //Recursion function
+    static void hanoi(int n, char source, char destination, char temp_rod){
         if (n==1){
-          System.out.println("Move disk 1 from rod "+from_rod+ " to rod "+to_rod);
-          return;  
+          System.out.println("Move disk 1 from rod "+source+ " to rod "+destination); 
         }
-        hanoi(n-1, from_rod, temp_rod, to_rod);
-        System.out.println("Move disk "+n+" from rod "+from_rod+" to rod "+to_rod);
-        hanoi(n-1, temp_rod, to_rod, from_rod);
+        hanoi(n-1, source, temp_rod, destination);
+        System.out.println("Move disk "+n+" from rod "+source+" to rod "+destination);
+        hanoi(n-1, temp_rod, destination, source);
     }
 
     public static void main(String[] args) {
