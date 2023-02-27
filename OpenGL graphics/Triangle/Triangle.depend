@@ -1,0 +1,4 @@
+# depslib dependency file v1.0
+1677018797 source:d:\repositories\cs_2nd_year\opengl graphics\triangle\main.cpp
+	<GL/glut.h>
+
