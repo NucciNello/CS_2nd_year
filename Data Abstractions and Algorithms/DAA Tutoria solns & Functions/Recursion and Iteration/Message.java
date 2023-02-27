@@ -3,23 +3,22 @@ public class Message {
 
     //Recursion function
     static String recu_print(String message,int n ){
-        if((message == null)||(n<=0)) 
+        if((message == "")||(n<=0)) 
             return "";
         else{
-            n--;
-            return message+"\n" + recu_print(message, n);
+            return message+"\n" + recu_print(message, n-1);
         }
     }
     //Iteration function
     static void itera_print(String message,int n ){
-        if((message == null)||(n<=0))
+        if((message == "")||(n<=0))
             System.out.println("");
         else{
                 int i=0;
                 while(i<n){
                    System.out.println(message);
                 i++;
-            }
+                }
         }
     }
 
