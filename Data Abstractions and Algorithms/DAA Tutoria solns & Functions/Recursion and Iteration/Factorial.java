@@ -28,7 +28,7 @@ public static void main(String[] args) {
     System.out.println("Enter the integer:");
     int n = sk.nextInt();
 
-    System.out.println(recu_factorial(n));
+    // System.out.println(recu_factorial(n));
     System.out.println(itera_factorial(n));
     
 }
