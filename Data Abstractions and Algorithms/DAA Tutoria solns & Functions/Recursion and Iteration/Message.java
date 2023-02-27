@@ -1,13 +1,28 @@
 import java.util.Scanner;
 public class Message {
-    static String nprint(String message,int n ){
+
+    //Recursion function
+    static String recu_print(String message,int n ){
         if((message == null)||(n<=0)) 
             return "";
         else{
             n--;
-            return message+"\n" + nprint(message, n);
+            return message+"\n" + recu_print(message, n);
         }
     }
+    //Iteration function
+    static void itera_print(String message,int n ){
+        if((message == null)||(n<=0))
+            System.out.println("");
+        else{
+                int i=0;
+                while(i<n){
+                   System.out.println(message);
+                i++;
+            }
+        }
+    }
+
 
     public static void main(String[] args){
         Scanner scan =new Scanner(System.in);
@@ -18,8 +33,9 @@ public class Message {
         System.out.println("How many times?");
         int times = scan.nextInt();
         
-        String result = nprint(message, times);
-        System.out.println(result);
+        System.out.println(recu_print(message, times));
+        System.out.println("\n");
+        itera_print(message, times);
     }
-    
 }
+
