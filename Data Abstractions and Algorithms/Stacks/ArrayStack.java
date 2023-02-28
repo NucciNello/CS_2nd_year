@@ -1,4 +1,4 @@
-class Stack {
+class ArrayStack {
     int stackSize;
     int []values;
     int top;
@@ -36,7 +36,8 @@ class Stack {
         if (isFull()){
             System.out.println("Error:The stack is full");
         }else{
-            values[++top] = x;
+            top++;
+            values[top] = x;
         }
     }
 
@@ -46,7 +47,8 @@ class Stack {
             System.out.println("Error:The stack is empty");
             return -1;
         }else{
-            return values[top--];
+            top--;
+            return values[top];
         }
     }
 
@@ -69,7 +71,7 @@ class Stack {
 
 
     public static void main(String[] args) {
-        Stack myStack = new Stack();
+        ArrayStack myStack = new ArrayStack();
 
         myStack.stack(5);
         myStack.push(2);

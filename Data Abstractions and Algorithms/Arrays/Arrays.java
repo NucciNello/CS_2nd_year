@@ -10,6 +10,6 @@ public class Arrays{
     }; 
   
         System.out.println(matrix.length);
-        System.out.println(matrix[3].length);
+        System.out.println(matrix[4].length);
     }
 }
