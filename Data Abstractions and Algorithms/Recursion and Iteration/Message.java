@@ -6,6 +6,7 @@ public class Message {
         if((message == "")||(n<=0)) 
             return "";
         else{
+            //testing
             return message+"\n" + recu_print(message, n-1);
         }
     }
